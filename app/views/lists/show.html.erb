@@ -1,0 +1,19 @@
+<h2><%= @list.name %> - id:<%= @list.id %> </h2>
+
+<p>
+  <button>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+  </button>
+  <button>
+    <%= link_to "Home", lists_path, class: "text-decoration-none text-reset" %>
+  </button>
+  </p>
+  <p>
+  <button>
+    <%= link_to "Delete List",
+        list_path(@list),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class: "text-decoration-none text-reset"
+    %>
+  </button>
+</p>
